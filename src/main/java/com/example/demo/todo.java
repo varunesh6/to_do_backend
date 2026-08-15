@@ -13,5 +13,6 @@ public class todo {
     @GeneratedValue
     long todo_id;
     String todo_Name;
+    String todo_Description;
     Boolean status;
 }

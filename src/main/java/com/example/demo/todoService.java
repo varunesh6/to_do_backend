@@ -30,7 +30,7 @@ public class todoService {
 
         up.setTodo_Name(todo.getTodo_Name());
         up.setStatus(todo.getStatus());
-
+        up.setTodo_Description(todo.getTodo_Description());
         return todoRepo.save(up);
     }
 
