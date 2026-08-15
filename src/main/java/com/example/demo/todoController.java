@@ -1,6 +1,8 @@
 package com.example.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -27,7 +29,10 @@ public class todoController {
                 HttpStatus.OK
         );
     }
-
+    @GetMapping
+    public ResponseEntity<Page<todo>> getPage(Pageable Pageable){
+        return ResponseEntity.ok(todoService.getAll(Pageable));
+    }
     @GetMapping("/{id}")
     public ResponseEntity<todo> get(@PathVariable Long id) {
         return new ResponseEntity<>(
