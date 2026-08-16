@@ -29,7 +29,7 @@ public class todoController {
                 HttpStatus.OK
         );
     }
-    @GetMapping
+    @GetMapping("/v1")
     public ResponseEntity<Page<todo>> getPage(Pageable Pageable){
         return ResponseEntity.ok(todoService.getAll(Pageable));
     }
